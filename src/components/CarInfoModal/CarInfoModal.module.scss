@@ -1,0 +1,133 @@
+@use 'src/styles/mixins';
+@import 'src/styles/varibles';
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+.modal {
+  @include mixins.size('width', 541, 541);
+  @include mixins.size('height', 752, 752);
+  background-color: white;
+  @include mixins.size('border-radius', 24, 24);
+  @include mixins.size('padding', 40, 40);
+  position: relative;
+}
+.closeBtn {
+  @include mixins.size('width', 24, 24);
+  @include mixins.size('height', 24, 24);
+  @include mixins.size('top', 16, 16);
+  @include mixins.size('right', 16, 16);
+  position: absolute;
+  background-color: transparent;
+}
+.imgWrapper {
+  @include mixins.size('width', 461, 461);
+  @include mixins.size('height', 248, 248);
+  overflow: hidden;
+  @include mixins.size('margin-bottom', 14, 14);
+}
+.img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  @include mixins.size('border-radius', 14, 14);
+}
+.nameWrapper {
+  display: flex;
+}
+.mainFontStyle {
+  font-family: mixins.$manrope;
+  @include mixins.size('font-size', 16, 16);
+  font-weight: 500;
+}
+.model {
+  color: mixins.$dark-blue;
+}
+.topLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include mixins.size('margin-bottom', 4, 4);
+}
+.bottomLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include mixins.size('margin-bottom', 14, 14);
+}
+.secondaryFontStyle {
+  font-family: mixins.$manrope;
+  @include mixins.size('font-size', 12, 12);
+  font-weight: 400;
+}
+.descr {
+  font-family: mixins.$manrope;
+  @include mixins.size('font-size', 14, 14);
+  font-weight: 400;
+  @include mixins.size('margin-bottom', 24, 24);
+}
+.accessoriesDesk {
+  font-family: mixins.$manrope;
+  @include mixins.size('font-size', 14, 14);
+  font-weight: 500;
+  @include mixins.size('margin-bottom', 8, 8);
+}
+.accessoryWrapper {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  @include mixins.size('margin-bottom', 4, 4);
+}
+.accessory {
+  margin: 0;
+  padding: 0;
+  font-family: mixins.$manrope;
+  @include mixins.size('font-size', 12, 12);
+  font-weight: 400;
+  @include mixins.size('margin-right', 8, 8);
+}
+.rental {
+  @include mixins.size('margin-top', 24, 24);
+  @include mixins.size('margin-bottom', 8, 8);
+  font-family: mixins.$manrope;
+  @include mixins.size('font-size', 14, 14);
+  font-weight: 500;
+  @include mixins.size('margin-bottom', 8, 8);
+}
+.flex {
+  display: flex;
+}
+.conditions {
+  @include mixins.size('height', 32, 32);
+  background-color: $sand;
+  @include mixins.size('border-radius', 35, 35);
+  @include mixins.size('padding-top', 7, 7);
+  @include mixins.size('padding-bottom', 7, 7);
+  @include mixins.size('padding-left', 14, 14);
+  @include mixins.size('padding-right', 14, 14);
+  @include mixins.size('margin-right', 8, 8);
+  @include mixins.size('margin-bottom', 8, 8);
+  font-family: mixins.$manrope;
+  @include mixins.size('font-size', 12, 12);
+  font-weight: 400;
+}
+.btn {
+  @include mixins.size('width', 168, 168);
+  @include mixins.size('height', 44, 44);
+  @include mixins.size('margin-top',24, 24);
+  @include mixins.size('border-radius', 12, 12);
+  background-color: mixins.$dark-blue;
+  color: white;
+  cursor: pointer;
+}

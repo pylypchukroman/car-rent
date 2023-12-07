@@ -1,12 +1,22 @@
 import styles from './CarCard.module.scss';
+import {FavoritesIcon} from "../FavoritesIcon/favoritesIcon";
+import {CarInfoModal} from "../CarInfoModal/CarInfoModal";
+import {useState} from "react";
 
 export const CarCard = ({ car }) => {
 
-    const city = (car) => {
-        return 0
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const OnBtnClick = (id) => {
+        setModalOpen(true);
+    }
+
+    const onModalClose = () => {
+        setModalOpen(false);
     }
 
     return (
+        <>
         <div className={styles.cardWrapper}>
             <div className={styles.imgWrapper}>
                 <img className={styles.img} src={car.img} alt=""/>
@@ -36,7 +46,12 @@ export const CarCard = ({ car }) => {
                     <p className={styles.secondaryFontStyle}>{car.accessories[0]}</p>
                 </div>
             </div>
-            <button className={styles.button} type='button'>Learn more</button>
+            <button className={styles.favBtn} >
+                < FavoritesIcon />
+            </button>
+            <button className={styles.button} type='button' onClick={() => OnBtnClick(car.id)}>Learn more</button>
         </div>
+            {modalOpen && <CarInfoModal id={car.id} onModalClose={onModalClose}/>}
+        </>
     );
 }

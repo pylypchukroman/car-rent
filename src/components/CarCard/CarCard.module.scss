@@ -4,6 +4,7 @@
 .cardWrapper {
   @include mixins.size('width', 150, 274);
   @include mixins.size('height', 300, 426);
+  position: relative;
 }
 
 .imgWrapper {
@@ -67,5 +68,14 @@
   @include mixins.size('border-radius', 12, 12);
   background-color: $dark-blue;
   color: white;
+  cursor: pointer;
+}
+.favBtn {
+  position: absolute;
+  background-color: transparent;
+  @include mixins.size('width', 30, 30);
+  @include mixins.size('height', 30, 30);
+  @include mixins.size('top', 14, 14);
+  @include mixins.size('right', 14, 14);
   cursor: pointer;
 }
