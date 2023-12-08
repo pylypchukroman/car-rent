@@ -10,7 +10,6 @@ export const Catalogue = () => {
             <Filter />
             <CarsList />
             <LoadMoreBtn />
-            <FavoritesIcon />
         </div>
     );
 }

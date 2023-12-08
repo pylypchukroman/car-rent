@@ -1,20 +1,41 @@
 import styles from './Filter.module.scss';
 import {useState} from "react";
+import {brands} from "../../data/brands";
+import {prices} from "../../data/prices";
+import {useDispatch} from "react-redux";
+import {setFilter} from "../../redux/filter/filterSlice";
 
 export const Filter = () => {
 
-    const [dropdown1Value, setDropdown1Value] = useState('');
-    const [dropdown2Value, setDropdown2Value] = useState('');
-    const [textInput1Value, setTextInput1Value] = useState('');
-    const [textInput2Value, setTextInput2Value] = useState('');
+    const dispatch = useDispatch();
+
+    const [formData, setFormData] = useState({
+        brand: "",
+        price: "",
+        from: "",
+        to: ""
+    });
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((prevState) => ({
+            ...prevState,
+            [name]: value,
+        }));
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Dropdown 1 value:', dropdown1Value);
-        console.log('Dropdown 2 value:', dropdown2Value);
-        console.log('Text Input 1 value:', textInput1Value);
-        console.log('Text Input 2 value:', textInput2Value);
-    };
+        const filter = {
+            brands: formData.brand,
+            price: formData.price,
+            mileage: {
+                from: formData.from,
+                to: formData.to
+            }
+        };
+        dispatch(setFilter(filter));
+    }
 
     return (
         <div className={styles.formWrapper}>
@@ -25,12 +46,16 @@ export const Filter = () => {
                         <select
                             className={styles.brand}
                             id="brand"
-                            value={dropdown1Value}
-                            onChange={(e) => setDropdown1Value(e.target.value)}
+                            name="brand"
+                            value={formData.brand}
+                            onChange={handleInputChange}
                         >
-                            <option value="">Select Option 1</option>
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
+                            <option value="">All Brands</option>
+                            {brands.map((brand, index) => (
+                                <option value={brand} key={index}>
+                                    {brand}
+                                </option>
+                            ))}
                         </select>
                     </div>
                     <div className={styles.selectWrapper}>
@@ -38,12 +63,16 @@ export const Filter = () => {
                         <select
                             className={styles.price}
                             id="price"
-                            value={dropdown2Value}
-                            onChange={(e) => setDropdown2Value(e.target.value)}
+                            name="price"
+                            value={formData.price}
+                            onChange={handleInputChange}
                         >
-                            <option value="">Select Value 1</option>
-                            <option value="value1">Value 1</option>
-                            <option value="value2">Value 2</option>
+                            <option value="">All Prices</option>
+                            {prices.map((price, index) => (
+                                <option value={price} key={index}>
+                                    {price}
+                                </option>
+                            ))}
                         </select>
                     </div>
                     <div className={styles.inputWrapper}>
@@ -52,8 +81,9 @@ export const Filter = () => {
                             className={styles.mileageFrom}
                             type="text"
                             id="from"
-                            value={textInput1Value}
-                            onChange={(e) => setTextInput1Value(e.target.value)}
+                            name="from"
+                            value={formData.from}
+                            onChange={handleInputChange}
                             placeholder="Text Input 1"
                         />
                     </div>
@@ -63,8 +93,9 @@ export const Filter = () => {
                             className={styles.mileageTo}
                             type="text"
                             id="to"
-                            value={textInput2Value}
-                            onChange={(e) => setTextInput2Value(e.target.value)}
+                            name="to"
+                            value={formData.to}
+                            onChange={handleInputChange}
                             placeholder="Text Input 2"
                         />
                     </div>
