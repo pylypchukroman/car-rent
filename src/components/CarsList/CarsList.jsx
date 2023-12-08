@@ -12,7 +12,6 @@ export const CarsList = () => {
     const cars = useSelector(selectCars);
     const filter = useSelector(selectFilter);
     const favoritesList = useSelector(selectFavorites);
-    console.log(favoritesList)
     const newCars = cars.map(car => {
         if (favoritesList.includes(car.id)) {
             return {

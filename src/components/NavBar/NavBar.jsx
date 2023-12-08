@@ -1,12 +1,12 @@
 import {NavLink} from "react-router-dom";
-import styles from './NavBar.module.scss';
+import styles from './NavBar.scss';
 
 export const NavBar = () => {
     return (
-        <div className={styles.wrapper}>
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to='/catalogue'>Catalogue</NavLink>
-            <NavLink to='/favorites'>Favorites</NavLink>
-        </div>
+        <nav className='navWrapper'>
+            <NavLink className="link" to='/'>Home</NavLink>
+            <NavLink className="link" to='/catalogue'>Catalogue</NavLink>
+            <NavLink className="link" to='/favorites'>Favorites</NavLink>
+        </nav>
     );
 }

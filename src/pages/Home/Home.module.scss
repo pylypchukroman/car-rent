@@ -1,0 +1,132 @@
+@use 'src/styles/mixins';
+@import 'src/styles/varibles';
+
+.wrapper {
+  @include mixins.size('padding-bottom', 10, 20);
+}
+.hero {
+  @include mixins.size('padding-left', 40, 128);
+  @include mixins.size('padding-right', 40, 128);
+  height: 100vh;
+  width: 100vw;
+}
+.box {
+  height: 100vh;
+  background-color: mixins.$dark-blue;
+  @include mixins.size('width', 400, 613);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.imgWrapper {
+  @include mixins.size('width', 500, 909);
+  @include mixins.size('height', 300, 545);
+  @include mixins.size('top', 20, 110);
+  position: absolute;
+  right: 0;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.textBox {
+  @include mixins.size('width', 400, 528);
+  @include mixins.size('height', 300, 445);
+  @include mixins.size('top', 20, 150);
+  @include mixins.size('left', 20, 170);
+  @include mixins.size('padding-top', 20, 50);
+  @include mixins.size('padding-right', 20, 30);
+  @include mixins.size('padding-left', 5, 10);
+  background-color: transparent;
+  border: 1px solid mixins.$orange;
+  position: absolute;
+  z-index: 2;
+}
+.primaryText {
+  @include mixins.size('font-size', 20, 55);
+  @include mixins.size('margin-bottom', 20, 50);
+  color: $sand;
+  font-weight: 600;
+}
+.secondaryText {
+  @include mixins.size('font-size', 20, 25);
+  @include mixins.size('margin-bottom', 20, 20);
+  @include mixins.size('width', 300, 400);
+  color: $sand;
+  font-weight: 400;
+}
+.about {
+  @include mixins.size('padding-right', 100, 160);
+  @include mixins.size('padding-left', 100, 160);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.header {
+  @include mixins.size('font-size', 20, 50);
+  font-weight: 500;
+  position: relative;
+  &:after {
+    @include mixins.size('height', 2, 2);
+    content: "";
+    width: 100%;
+    background-color: mixins.$orange;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+.content {
+  display: flex;
+  @include mixins.size('margin-top', 20, 50);
+}
+.contentImgWrapper {
+  @include mixins.size('width', 400, 548);
+  @include mixins.size('height', 300, 354);
+}
+.contentImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.contentText {
+  @include mixins.size('margin-left', 10, 30);
+  @include mixins.size('width', 150, 450);
+  @include mixins.size('margin-top', 100, 100);
+  @include mixins.size('font-size', 20, 25);
+}
+.advantages {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include mixins.size('padding-right', 100, 360);
+  @include mixins.size('padding-left', 100, 360);
+  @include mixins.size('padding-top', 64, 64);
+  @include mixins.size('padding-bottom', 64, 64);
+  @include mixins.size('margin-top', 50, 80);
+  background-color: mixins.$lightOrange;
+}
+
+.advantagesBox {
+  @include mixins.size('width', 168, 168);
+  @include mixins.size('height', 93, 93);
+  border: 1px solid mixins.$dark-blue;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.advantagesHeader {
+  @include mixins.size('font-size', 20, 25);
+  @include mixins.size('font-size', 20, 25);
+  @include mixins.size('margin-bottom', 8, 8);
+}
+.advantagesSubHeader {
+  @include mixins.size('font-size', 10, 12);
+  opacity: 0.5;
+}

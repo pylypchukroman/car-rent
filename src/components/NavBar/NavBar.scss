@@ -1,0 +1,28 @@
+@use 'src/styles/mixins';
+@import 'src/styles/varibles';
+
+.navWrapper {
+  @include mixins.size('padding-top', 10, 20);
+  @include mixins.size('padding-bottom', 10, 20);
+  @include mixins.size('padding-left', 30, 128);
+  @include mixins.size('padding-right', 30, 128);
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.link {
+  @include mixins.size('margin-left', 30, 150);
+  @include mixins.size('font-size', 8, 17);
+  text-decoration: none;
+  color: mixins.$black;
+  font-weight: 600;
+  transition: all 0.5s;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &.active {
+    color: mixins.$orange;
+  }
+}
+
+
