@@ -2,10 +2,14 @@ import styles from './CarCard.module.scss';
 import {FavoritesIcon} from "../FavoritesIcon/favoritesIcon";
 import {CarInfoModal} from "../CarInfoModal/CarInfoModal";
 import {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {setFavorites} from "../../redux/favorites/favoritesSlice";
+import {selectFavorites} from "../../redux/favorites/selectors";
 
 export const CarCard = ({ car }) => {
 
     const [modalOpen, setModalOpen] = useState(false);
+    const dispatch = useDispatch();
 
     const OnBtnClick = (id) => {
         setModalOpen(true);
@@ -13,6 +17,10 @@ export const CarCard = ({ car }) => {
 
     const onModalClose = () => {
         setModalOpen(false);
+    }
+
+    const favoritesBtnClick = (id) => {
+        dispatch(setFavorites(id));
     }
 
     return (
@@ -46,8 +54,8 @@ export const CarCard = ({ car }) => {
                     <p className={styles.secondaryFontStyle}>{car.accessories[0]}</p>
                 </div>
             </div>
-            <button className={styles.favBtn} >
-                < FavoritesIcon />
+            <button className={styles.favBtn} onClick={() => favoritesBtnClick(car.id)}>
+                < FavoritesIcon isFavorite={car.favorites} />
             </button>
             <button className={styles.button} type='button' onClick={() => OnBtnClick(car.id)}>Learn more</button>
         </div>
