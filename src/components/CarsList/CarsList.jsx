@@ -6,7 +6,7 @@ export const CarsList = () => {
     const { carsToShow } = useCarsListData();
 
     return (
-        <div>
+        <div className={styles.wr}>
             <ul className={styles.wrapper}>
                 {carsToShow.map(car => <CarCard key={car.id} car={car} />)}
             </ul>

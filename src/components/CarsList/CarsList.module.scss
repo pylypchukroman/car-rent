@@ -1,6 +1,12 @@
+@use 'src/styles/mixins';
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 1em;
+}
+.wr {
+  @include mixins.size('padding-right', 100, 128);
+  @include mixins.size('padding-left', 100, 128);
 }
