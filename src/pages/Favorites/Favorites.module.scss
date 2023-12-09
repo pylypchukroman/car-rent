@@ -1,0 +1,18 @@
+@use 'src/styles/mixins';
+
+.wrapper {
+  @include mixins.size('padding-right', 20, 128);
+  @include mixins.size('padding-left', 20, 128);
+  @include mixins.size('padding-top', 30, 50);
+  @include mixins.size('padding-bottom', 30, 50);
+}
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  @include mixins.size('grid-column-gap', 10, 20);
+  @include mixins.size('grid-row-gap', 10, 40);
+  justify-items: center;
+  @include mixins.for-mobile{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

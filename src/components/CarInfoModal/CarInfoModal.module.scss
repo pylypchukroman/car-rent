@@ -123,11 +123,15 @@
   font-weight: 400;
 }
 .btn {
-  @include mixins.size('width', 168, 168);
-  @include mixins.size('height', 44, 44);
+  @include mixins.size('padding-top', 10, 12);
+  @include mixins.size('padding-bottom', 10, 12);
+  @include mixins.size('padding-left', 10, 50);
+  @include mixins.size('padding-right', 10, 50);
   @include mixins.size('margin-top',24, 24);
   @include mixins.size('border-radius', 12, 12);
   background-color: mixins.$dark-blue;
+  display: inline-block;
   color: white;
   cursor: pointer;
+  text-decoration: none;
 }

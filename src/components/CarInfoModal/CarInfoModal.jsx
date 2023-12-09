@@ -65,7 +65,7 @@ export const CarInfoModal = ({ car, onModalClose }) => {
                     <p className={styles.conditions}>Mileage: {car.mileage} </p>
                     <p className={styles.conditions}>Price: {car.rentalPrice} </p>
                 </div>
-                <button className={styles.btn} type="button">Rental car</button>
+                <a className={styles.btn} href="tel:+380730000000">Rental car</a>
             </div>
         </div>
     );

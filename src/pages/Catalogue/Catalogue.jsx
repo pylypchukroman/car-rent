@@ -5,6 +5,7 @@ import {useEffect} from "react";
 import {fetchCarsByPage, fetchDataThunk} from "../../redux/cars/operations";
 import {useDispatch, useSelector} from "react-redux";
 import {selectCurrentPage} from "../../redux/currentPage/selectors";
+import {Footer} from "../../components/Footer/Footer";
 
 export const Catalogue = () => {
     const dispatch = useDispatch();
@@ -16,10 +17,11 @@ export const Catalogue = () => {
     }, [dispatch, currentPage]);
 
     return (
-        <div>
+        <>
             <Filter />
             <CarsList />
             <LoadMoreBtn />
-        </div>
+            <Footer/>
+        </>
     );
 };

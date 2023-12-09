@@ -6,7 +6,6 @@ import {useDispatch} from "react-redux";
 import {setFavorites} from "../../redux/favorites/favoritesSlice";
 
 export const CarCard = ({ car }) => {
-
     const [modalOpen, setModalOpen] = useState(false);
     const dispatch = useDispatch();
 
@@ -43,7 +42,7 @@ export const CarCard = ({ car }) => {
                 <div className={styles.bottomLine}>
                     <p className={styles.secondaryFontStyle}>{car.type}</p>
                     <p className={styles.secondaryFontStyle}>{car.make}</p>
-                    <p className={styles.secondaryFontStyle}>{car.mileage}</p>
+                    <p className={styles.secondaryFontStyle}>{getCorrectMileage(car.mileage)}</p>
                     <p className={styles.secondaryFontStyle}>{car.accessories[0]}</p>
                 </div>
             </div>
@@ -65,3 +64,7 @@ export const CarCard = ({ car }) => {
         </>
     );
 };
+
+function getCorrectMileage(mileage) {
+    return mileage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}

@@ -1,0 +1,26 @@
+@use 'src/styles/mixins';
+@import 'src/styles/varibles';
+
+.wrapper {
+  @include mixins.size('height', 100, 150);
+  @include mixins.size('padding-right', 20, 128);
+  @include mixins.size('padding-left', 20, 128);
+  @include mixins.size('padding-top', 30, 50);
+  @include mixins.size('padding-bottom', 30, 50);
+  width: 100%;
+  background-color: $lightOrange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text {
+  @include mixins.size('font-size', 12, 20);
+  font-weight: 600;
+}
+.phone {
+  @include mixins.size('font-size', 12, 20);
+  @include mixins.size('margin-left', 2, 4);
+  font-weight: 600;
+  color: $orange;
+  text-decoration: none;
+}

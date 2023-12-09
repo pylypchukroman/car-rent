@@ -1,0 +1,61 @@
+@use 'src/styles/mixins';
+@import 'src/styles/varibles';
+
+.wrapper {
+  @include mixins.size('width', 160, 274);
+  @include mixins.size('height', 280, 380);
+  @include mixins.size('border-radius', 12, 14);
+  @include mixins.size('padding', 10, 10);
+  border: 1px solid mixins.$dark-blue;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.imgWrapper {
+  @include mixins.size('width', 140, 250);
+  @include mixins.size('height', 150, 200);
+  @include mixins.size('margin-bottom', 20, 30);
+
+}
+.img {
+  @include mixins.size('border-radius', 12, 14);
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.topLine {
+  @include mixins.size('margin-bottom', 10, 20);
+  @include mixins.size('width', 120, 200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bottomLine {
+  @include mixins.size('width', 120, 200);
+  @include mixins.size('margin-bottom', 10, 20);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.text {
+  @include mixins.size('font-size', 10, 16);
+}
+.MainText {
+  @include mixins.size('font-size', 12, 16);
+  font-weight: 600;
+}
+.companyHeader {
+  @include mixins.size('margin-bottom', 5, 5);
+  @include mixins.size('font-size', 10, 14);
+}
+.numbers {
+  color: mixins.$orange;
+  font-weight: 600;
+}
+.companyText {
+  @include mixins.size('font-size', 12, 16);
+}
