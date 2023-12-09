@@ -1,16 +1,7 @@
 import styles from './CarInfoModal.module.scss';
 import {useEffect} from "react";
-import {useSelector} from "react-redux";
-import {selectCars} from "../../redux/selectors";
 
-export const CarInfoModal = ({ id, onModalClose }) => {
-
-    const cars = useSelector(selectCars);
-    const car = cars.find(car => car.id === id);
-
-    const onCloseBtnClick = () => {
-        onModalClose()
-    };
+export const CarInfoModal = ({ car, onModalClose }) => {
 
     useEffect(() => {
         const handleKeyDown = e => {
@@ -27,7 +18,10 @@ export const CarInfoModal = ({ id, onModalClose }) => {
     return (
         <div className={styles.backdrop}>
             <div className={styles.modal}>
-                <button className={styles.closeBtn} type="button" onClick={onCloseBtnClick}>
+                <button
+                    className={styles.closeBtn}
+                    type="button" onClick={() => onModalClose()}
+                >
                     X
                 </button>
                 <div className={styles.imgWrapper}>
@@ -74,5 +68,5 @@ export const CarInfoModal = ({ id, onModalClose }) => {
                 <button className={styles.btn} type="button">Rental car</button>
             </div>
         </div>
-    )
-}
+    );
+};

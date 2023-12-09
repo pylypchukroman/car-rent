@@ -6,7 +6,6 @@ import {useDispatch} from "react-redux";
 import {setFilter} from "../../redux/filter/filterSlice";
 
 export const Filter = () => {
-
     const dispatch = useDispatch();
 
     const [formData, setFormData] = useState({
@@ -105,4 +104,4 @@ export const Filter = () => {
             </form>
         </div>
     );
-}
+};

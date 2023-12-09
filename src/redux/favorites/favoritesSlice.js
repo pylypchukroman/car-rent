@@ -18,7 +18,7 @@ const filterSlice = createSlice({
             }
         }
     }
-})
+});
 
 export const { setFavorites } = filterSlice.actions;
 export const favoritesReducer = filterSlice.reducer;

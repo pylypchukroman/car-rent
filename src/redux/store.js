@@ -1,5 +1,5 @@
 import {configureStore} from "@reduxjs/toolkit";
-import {carsReducer} from "./carsSlice";
+import {carsReducer} from "./cars/carsSlice";
 import {filterReducer} from "./filter/filterSlice";
 import {favoritesReducer} from "./favorites/favoritesSlice";
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
@@ -12,7 +12,7 @@ const persistConfig = {
     storage
 };
 
-const persistedReducer = persistReducer(persistConfig, favoritesReducer)
+const persistedReducer = persistReducer(persistConfig, favoritesReducer);
 
 export const store = configureStore({
     reducer: {

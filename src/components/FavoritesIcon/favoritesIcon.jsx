@@ -1,6 +1,6 @@
 import styles from './FavoritesIcon.module.scss';
 
-export const FavoritesIcon = ({ isFavorite = true }) => {
+export const FavoritesIcon = ({ isFavorite }) => {
     return (
         <div className={styles.iconWrapper}>
             {isFavorite ? (
@@ -14,4 +14,4 @@ export const FavoritesIcon = ({ isFavorite = true }) => {
             )}
         </div>
     );
-}
+};

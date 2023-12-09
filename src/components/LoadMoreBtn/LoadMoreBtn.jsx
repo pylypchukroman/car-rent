@@ -20,6 +20,5 @@ export const LoadMoreBtn = () => {
                 Load more
             </button>
         </div>
-
-    )
-}
+    );
+};

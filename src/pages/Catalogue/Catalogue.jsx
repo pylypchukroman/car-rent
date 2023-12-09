@@ -1,10 +1,10 @@
-import {CarsList} from "../components/CarsList/CarsList";
-import {Filter} from "../components/Filter/Filter";
-import {LoadMoreBtn} from "../components/LoadMoreBtn/LoadMoreBtn";
-import {useEffect, useState} from "react";
-import {fetchCarsByPage} from "../redux/operations";
+import {CarsList} from "../../components/CarsList/CarsList";
+import {Filter} from "../../components/Filter/Filter";
+import {LoadMoreBtn} from "../../components/LoadMoreBtn/LoadMoreBtn";
+import {useEffect} from "react";
+import {fetchCarsByPage, fetchDataThunk} from "../../redux/cars/operations";
 import {useDispatch, useSelector} from "react-redux";
-import {selectCurrentPage} from "../redux/currentPage/selectors";
+import {selectCurrentPage} from "../../redux/currentPage/selectors";
 
 export const Catalogue = () => {
     const dispatch = useDispatch();
@@ -12,6 +12,7 @@ export const Catalogue = () => {
 
     useEffect(() => {
         dispatch(fetchCarsByPage(currentPage));
+        dispatch(fetchDataThunk());
     }, [dispatch, currentPage]);
 
     return (
@@ -21,4 +22,4 @@ export const Catalogue = () => {
             <LoadMoreBtn />
         </div>
     );
-}
+};

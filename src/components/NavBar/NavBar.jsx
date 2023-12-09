@@ -1,5 +1,6 @@
-import {NavLink} from "react-router-dom";
 import styles from './NavBar.scss';
+import {NavLink} from "react-router-dom";
+
 
 export const NavBar = () => {
     return (
@@ -9,4 +10,4 @@ export const NavBar = () => {
             <NavLink className="link" to='/favorites'>Favorites</NavLink>
         </nav>
     );
-}
+};

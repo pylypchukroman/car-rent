@@ -11,9 +11,7 @@ const initialState = {
 const carSlice = createSlice({
     name: 'cars',
     initialState,
-    reducers: {
-
-    },
+    reducers: {},
     extraReducers: builder => {
         builder
             .addCase(fetchDataThunk.fulfilled, (state, { payload }) => {
@@ -39,14 +37,6 @@ const carSlice = createSlice({
                     state.error = payload;
                 }
             )
-            // .addCase(fetchDataThunk.pending, (state, { payload }) => {
-            //     state.loading = true;
-            //     state.error = null;
-            // })
-        //     .addCase(fetchDataThunk.rejected, (state, { payload }) => {
-        //         state.loading = false;
-        //         state.error = payload;
-        // })
     }
 });
 
