@@ -4,6 +4,7 @@ import {filterReducer} from "./filter/filterSlice";
 import {favoritesReducer} from "./favorites/favoritesSlice";
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import {currentPageReducer} from "./currentPage/CurrentPageSlice";
 
 const persistConfig = {
     key: 'root',
@@ -17,7 +18,8 @@ export const store = configureStore({
     reducer: {
         carsList: carsReducer,
         filter: filterReducer,
-        favorites: persistedReducer
+        favorites: persistedReducer,
+        currentPage: currentPageReducer
     },
     middleware: getDefaultMiddleware =>
         getDefaultMiddleware({

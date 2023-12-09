@@ -7,7 +7,8 @@ const initialState = {
         mileage: {
             from: "",
             to: ""
-        }
+        },
+        isActive: false
     }
 };
 

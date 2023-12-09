@@ -1,18 +1,29 @@
 import styles from './CarsList.module.scss';
 import {useDispatch, useSelector} from "react-redux";
-import {selectCars} from "../../redux/selectors";
-import {useEffect} from "react";
+import {selectCars, selectCarsByPage} from "../../redux/selectors";
+import {useEffect, useState} from "react";
 import {fetchDataThunk} from "../../redux/operations";
 import {CarCard} from "../CarCard/CarCard";
 import {selectFilter} from "../../redux/filter/selectors";
 import {selectFavorites} from "../../redux/favorites/selectors";
+import {selectCurrentPage} from "../../redux/currentPage/selectors";
 
 export const CarsList = () => {
+    const currentPage = useSelector(selectCurrentPage);
+    const carsByPage = useSelector(selectCarsByPage);
     const dispatch = useDispatch();
     const cars = useSelector(selectCars);
     const filter = useSelector(selectFilter);
     const favoritesList = useSelector(selectFavorites);
-    const newCars = cars.map(car => {
+    useEffect(() => {
+        setCarsToShow(prev =>
+            currentPage === 1 ? carsByPage : [...prev, ...carsByPage]
+        );
+    }, [carsByPage])
+
+    const [carsToShow, setCarsToShow] = useState(carsByPage);
+
+    const newCarsWithFav = carsToShow.map(car => {
         if (favoritesList.includes(car.id)) {
             return {
                 ...car,
@@ -25,7 +36,21 @@ export const CarsList = () => {
             }
         }
     })
-    const filteredCars = newCars.filter(car => {
+    const AllCarsWithFav = cars.map(car => {
+        if (favoritesList.includes(car.id)) {
+            return {
+                ...car,
+                favorites: true
+            }
+        } else {
+            return {
+                ...car,
+                favorites: false
+            }
+        }
+    })
+    const carsToFilter = filter.isActive ? AllCarsWithFav : newCarsWithFav;
+    const filteredCars = carsToFilter.filter(car => {
         const nameMatch = filter.brands ? car.make === filter.brands : true;
         const priceMatch = filter.price ? (parseInt(car.rentalPrice.slice(1), 10)) <= filter.price : true;
         const mileageFromMatch = filter.mileage.from ? car.mileage >= filter.mileage.from : true;

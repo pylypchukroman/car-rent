@@ -32,7 +32,8 @@ export const Filter = () => {
             mileage: {
                 from: formData.from,
                 to: formData.to
-            }
+            },
+            isActive: true
         };
         dispatch(setFilter(filter));
     }
@@ -50,7 +51,7 @@ export const Filter = () => {
                             value={formData.brand}
                             onChange={handleInputChange}
                         >
-                            <option value="">All Brands</option>
+                            <option hidden={true}>Select a value*</option>
                             {brands.map((brand, index) => (
                                 <option value={brand} key={index}>
                                     {brand}
@@ -67,7 +68,7 @@ export const Filter = () => {
                             value={formData.price}
                             onChange={handleInputChange}
                         >
-                            <option value="">All Prices</option>
+                            <option hidden={true}>Select a value*</option>
                             {prices.map((price, index) => (
                                 <option value={price} key={index}>
                                     {price}

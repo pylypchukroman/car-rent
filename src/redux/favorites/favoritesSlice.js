@@ -9,12 +9,12 @@ const filterSlice = createSlice({
     initialState,
     reducers: {
         setFavorites: (state, {payload}) => {
-            const exist = state.favoritesList.includes(payload);
+            const exist = state.favoritesList.includes(payload); // check if selected car already in the favorites list
             if (exist) {
                 const index = state.favoritesList.indexOf(payload)
-                state.favoritesList.splice(index, 1);
+                state.favoritesList.splice(index, 1); //remove from favorites
             } else {
-                state.favoritesList.push(payload);
+                state.favoritesList.push(payload); // add to favorites
             }
         }
     }
