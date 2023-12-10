@@ -1,7 +1,6 @@
 @use 'src/styles/mixins';
 @import 'src/styles/varibles';
 
-
 .header {
   @include mixins.size('margin-bottom', 8, 8);
   @include mixins.size('font-size', 8, 14);
@@ -9,24 +8,41 @@
   color: $ceramic;
 }
 .dropdown {
-  @include mixins.size('width', 100, 224);
+  @include mixins.size('width', 80, 125);
   @include mixins.size('height', 20, 48);
   @include mixins.size('padding-top', 6, 14);
   @include mixins.size('padding-bottom', 6, 14);
   @include mixins.size('padding-right', 6, 14);
-  @include mixins.size('padding-left', 6, 18);
+  @include mixins.size('padding-left', 16, 18);
   @include mixins.size('border-radius', 14, 14);
   background-color: $sand;
   position: relative;
 }
 .btn {
   @include mixins.size('font-size', 8, 18);
+  @include mixins.size('margin-left', 16, 30);
   font-weight: 500;
   color: $ebony;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  position: relative;
+}
+.btnHeader {
+  @include mixins.size('left', -16, -25);
+  position: absolute;
+  top: 0;
+}
+.currency {
+  @include mixins.size('right', 20, 25);
+  position: absolute;
+  top: 0;
+}
+.icon {
+  position: absolute;
+  top: 0;
+  @include mixins.size('right', 10, 0);
 }
 .contentWrapper {
   @include mixins.size('margin-top', -8, 16);

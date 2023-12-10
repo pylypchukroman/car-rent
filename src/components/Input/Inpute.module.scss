@@ -1,0 +1,73 @@
+@use 'src/styles/mixins';
+@import 'src/styles/varibles';
+
+
+.wrapper {
+  display: flex;
+}
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  p {
+    @include mixins.size('font-size', 8, 18);
+    @include mixins.size('bottom', 5, 14);
+    font-weight: 500;
+    position: absolute;
+    z-index: 2;
+  }
+}
+.price {
+  @include mixins.size('width', 125, 125);
+  @include mixins.size('height', 30, 48);
+  @include mixins.size('padding-top', 14, 14);
+  @include mixins.size('padding-bottom', 14, 14);
+  @include mixins.size('border-radius', 14, 14);
+  background-color: $sand;
+  outline: none;
+  border: none;
+}
+.from {
+  @include mixins.size('left', 10, 24);
+}
+.to {
+  @include mixins.size('left', 20, 44);
+}
+input {
+  @include mixins.size('width', 60, 160);
+  @include mixins.size('height', 20, 48);
+  @include mixins.size('padding-top', 6, 14);
+  @include mixins.size('padding-bottom', 6, 14);
+  @include mixins.size('padding-left', 30, 70);
+  @include mixins.size('font-size', 8, 18);
+  background-color: $sand;
+  font-weight: 500;
+  color: $ebony;
+  outline: none;
+  border: none;
+}
+.mileageFrom {
+  @include mixins.size('border-bottom-left-radius', 14, 14);
+  @include mixins.size('border-top-left-radius', 14, 14);
+  position: relative;
+}
+.mileageTo {
+  @include mixins.size('border-bottom-right-radius', 14, 14);
+  @include mixins.size('border-top-right-radius', 14, 14);
+  @include mixins.size('margin-top', 17, 24);
+}
+.line {
+  @include mixins.size('width', 1, 1);
+  @include mixins.size('height', 20, 48);
+  background-color: $ceramic;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0.2;
+}
+.label {
+  @include mixins.size('margin-bottom', 8, 8);
+  @include mixins.size('font-size', 8, 14);
+  font-weight: 500;
+  color: $ceramic;
+}
