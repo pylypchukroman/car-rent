@@ -1,6 +1,6 @@
 import styles from './CarInfoModal.module.scss';
 import {useEffect} from "react";
-import {CloseBtn} from "../CloseBtn/CloseBtn";
+import {CloseIcon} from "../CloseIcon/CloseIcon";
 
 export const CarInfoModal = ({ car, onModalClose }) => {
 
@@ -29,7 +29,7 @@ export const CarInfoModal = ({ car, onModalClose }) => {
                     className={styles.closeBtn}
                     type="button" onClick={() => onModalClose()}
                 >
-                    < CloseBtn />
+                    < CloseIcon />
                 </button>
                 <div className={styles.imgWrapper}>
                     <img className={styles.img} src={car.img} alt=""/>

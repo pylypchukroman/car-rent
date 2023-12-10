@@ -1,0 +1,44 @@
+@use 'src/styles/mixins';
+@import 'src/styles/varibles';
+
+.dropdown {
+  @include mixins.size('width', 224, 224);
+  @include mixins.size('height', 42, 48);
+  @include mixins.size('padding-top', 12, 14);
+  @include mixins.size('padding-bottom', 12, 14);
+  @include mixins.size('padding-right', 12, 14);
+  @include mixins.size('padding-left', 16, 18);
+  @include mixins.size('border-radius', 14, 14);
+  //width: 100%;
+  background-color: $sand;
+  position: relative;
+}
+.btn {
+  @include mixins.size('font-size', 14, 18);
+  font-weight: 500;
+  color: $ebony;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.contentWrapper {
+  @include mixins.size('margin-top', 16, 16);
+  @include mixins.size('top', 30, 35);
+  @include mixins.size('padding-top', 12, 14);
+  @include mixins.size('padding-right', 12, 18);
+  @include mixins.size('padding-left', 16, 18);
+  @include mixins.size('border-radius', 12, 14);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: $sand;
+}
+.content {
+  @include mixins.size('font-size', 12, 16);
+  @include mixins.size('margin-bottom', 8, 8);
+  font-weight: 500;
+  color: $ebony;
+  opacity: 0.2;
+  cursor: pointer;
+}

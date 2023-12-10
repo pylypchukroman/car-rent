@@ -81,7 +81,6 @@
   border: none;
 }
 .label {
-  font-family: mixins.$manrope;
   @include mixins.size('font-size', 14, 14);
   font-weight: 500;
   @include mixins.size('margin-bottom', 8, 8);
