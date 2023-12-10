@@ -10,9 +10,9 @@
 
 .button {
   @include mixins.size('width', 150, 274);
-  @include mixins.size('height', 44, 44);
-  @include mixins.size('margin-top', 10, 40);
-  @include mixins.size('margin-bottom', 10, 40);
+  @include mixins.size('height', 40, 44);
+  @include mixins.size('margin-top', 40, 100);
+  @include mixins.size('margin-bottom', 50, 150);
   @include mixins.size('border-radius', 12, 12);
   background-color: mixins.$orange;
   color: white;

@@ -4,132 +4,172 @@
 .backdrop {
   width: 100vw;
   height: 100vh;
-  background-color: red;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 2;
 }
 .modal {
-  @include mixins.size('width', 541, 541);
-  @include mixins.size('height', 752, 752);
-  background-color: white;
+  @include mixins.size('width', null, 541);
+  @include mixins.size('height', 550, 752);
   @include mixins.size('border-radius', 24, 24);
-  @include mixins.size('padding', 40, 40);
+  @include mixins.size('padding', 25, 40);
+  background-color: white;
   position: relative;
+  opacity: 1;
+  @include mixins.for-mobile {
+    width: 100vw;
+  }
 }
 .closeBtn {
-  @include mixins.size('width', 24, 24);
-  @include mixins.size('height', 24, 24);
-  @include mixins.size('top', 16, 16);
-  @include mixins.size('right', 16, 16);
+  @include mixins.size('width', 22, 24);
+  @include mixins.size('height', 22, 24);
+  @include mixins.size('top', 8, 16);
+  @include mixins.size('right', 8, 16);
   position: absolute;
   background-color: transparent;
 }
 .imgWrapper {
-  @include mixins.size('width', 461, 461);
-  @include mixins.size('height', 248, 248);
-  overflow: hidden;
+  @include mixins.size('width', null, 461);
+  @include mixins.size('height', 180, 248);
   @include mixins.size('margin-bottom', 14, 14);
+  @include mixins.size('border-radius', 14, 14);
+  overflow: hidden;
+  @include mixins.for-mobile {
+    width: 100%;
+  }
 }
 .img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
-  @include mixins.size('border-radius', 14, 14);
 }
 .nameWrapper {
+  @include mixins.size('margin-bottom', 6, 8);
   display: flex;
-}
-.mainFontStyle {
-  font-family: mixins.$manrope;
-  @include mixins.size('font-size', 16, 16);
-  font-weight: 500;
 }
 .model {
   color: mixins.$dark-blue;
 }
-.topLine {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  @include mixins.size('margin-bottom', 4, 4);
-}
-.bottomLine {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  @include mixins.size('margin-bottom', 14, 14);
+.mainFontStyle {
+  @include mixins.size('font-size', 16, 18);
+  font-weight: 500;
+  line-height: 1.3;
 }
 .secondaryFontStyle {
   font-family: mixins.$manrope;
-  @include mixins.size('font-size', 12, 12);
+  @include mixins.size('font-size', 8, 12);
   font-weight: 400;
+  color: $ebony;
+  opacity: 0.5;
+}
+.row {
+  display: flex;
+  align-items: center;
+  @include mixins.size('margin-bottom', 4, 4);
+  p {
+    @include mixins.size('margin-right', 6, 12);
+    position: relative;
+    &:after {
+      content: '';
+      @include mixins.size('right', 2, -6);
+      display: block;
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      background-color: $ebony;
+      opacity: 0.2;
+    }
+    &:last-child {
+      margin-right: 0;
+      &:after {
+        display: none;
+      }
+    }
+  }
 }
 .descr {
-  font-family: mixins.$manrope;
-  @include mixins.size('font-size', 14, 14);
+  @include mixins.size('font-size', 10, 14);
+  @include mixins.size('margin-bottom', 10, 24);
+  @include mixins.size('margin-top', 8, 14);
   font-weight: 400;
-  @include mixins.size('margin-bottom', 24, 24);
 }
 .accessoriesDesk {
-  font-family: mixins.$manrope;
-  @include mixins.size('font-size', 14, 14);
-  font-weight: 500;
+  @include mixins.size('font-size', 12, 14);
   @include mixins.size('margin-bottom', 8, 8);
+  font-weight: 500;
+}
+.rentalHeader {
+  @include mixins.size('font-size', 10, 14);
+  @include mixins.size('margin-top', 16, 24);
+  @include mixins.size('margin-bottom', 8, 8);
+  font-weight: 500;
 }
 .accessoryWrapper {
+  @include mixins.size('margin-bottom', 4, 4);
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  @include mixins.size('margin-bottom', 4, 4);
-}
-.accessory {
-  margin: 0;
-  padding: 0;
-  font-family: mixins.$manrope;
-  @include mixins.size('font-size', 12, 12);
-  font-weight: 400;
-  @include mixins.size('margin-right', 8, 8);
-}
-.rental {
-  @include mixins.size('margin-top', 24, 24);
-  @include mixins.size('margin-bottom', 8, 8);
-  font-family: mixins.$manrope;
-  @include mixins.size('font-size', 14, 14);
-  font-weight: 500;
-  @include mixins.size('margin-bottom', 8, 8);
+  li {
+    @include mixins.size('margin-right', 4, 12);
+    position: relative;
+    &:after {
+      content: '';
+      @include mixins.size('right', 2, -6);
+      display: block;
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      background-color: $ebony;
+      opacity: 0.2;
+    }
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+  }
 }
 .flex {
   display: flex;
 }
 .conditions {
-  @include mixins.size('height', 32, 32);
-  background-color: $sand;
+  @include mixins.size('height', 30, 32);
   @include mixins.size('border-radius', 35, 35);
-  @include mixins.size('padding-top', 7, 7);
-  @include mixins.size('padding-bottom', 7, 7);
-  @include mixins.size('padding-left', 14, 14);
-  @include mixins.size('padding-right', 14, 14);
+  @include mixins.size('padding-top', 5, 7);
+  @include mixins.size('padding-bottom', 5, 7);
+  @include mixins.size('padding-left', 10, 14);
+  @include mixins.size('padding-right', 10, 14);
   @include mixins.size('margin-right', 8, 8);
   @include mixins.size('margin-bottom', 8, 8);
-  font-family: mixins.$manrope;
-  @include mixins.size('font-size', 12, 12);
+  @include mixins.size('font-size', 8, 12);
+  background-color: mixins.$sand;
+  color: $light-black;
   font-weight: 400;
+  line-height: 1.5;
+}
+.numbers {
+  color: mixins.$light-blue;
+  font-weight: 500;
 }
 .btn {
   @include mixins.size('padding-top', 10, 12);
   @include mixins.size('padding-bottom', 10, 12);
-  @include mixins.size('padding-left', 10, 50);
-  @include mixins.size('padding-right', 10, 50);
-  @include mixins.size('margin-top',24, 24);
+  @include mixins.size('padding-left', 30, 50);
+  @include mixins.size('padding-right', 30, 50);
+  @include mixins.size('margin-top', 20, 20);
   @include mixins.size('border-radius', 12, 12);
-  background-color: mixins.$dark-blue;
+  @include mixins.size('font-size', 10, 14);
+  background-color: mixins.$light-blue;
+  font-weight: 500;
   display: inline-block;
   color: white;
   cursor: pointer;

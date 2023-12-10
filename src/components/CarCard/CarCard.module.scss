@@ -2,14 +2,14 @@
 @import 'src/styles/varibles';
 
 .cardWrapper {
-  @include mixins.size('width', 150, 274);
-  @include mixins.size('height', 300, 426);
+  @include mixins.size('width', 170, 274);
+  @include mixins.size('height', 270, 426);
   position: relative;
 }
 
 .imgWrapper {
-  @include mixins.size('width', 150, 274);
-  @include mixins.size('height', 268, 268);
+  @include mixins.size('width', 170, 274);
+  @include mixins.size('height', 150, 268);
 }
 
 .img {
@@ -28,55 +28,71 @@
   @include mixins.size('margin-top', 14, 14);
   @include mixins.size('margin-bottom', 8, 8);
 }
-
-.secondaryInfo {
-
-}
 .nameWrapper {
   display: flex;
 }
 
 .mainFontStyle {
-  font-family: mixins.$manrope;
-  @include mixins.size('font-size', 16, 16);
+  @include mixins.size('font-size', 12, 16);
+  line-height: 0.6;
   font-weight: 500;
 }
 
 .secondaryFontStyle {
-  font-family: mixins.$manrope;
-  @include mixins.size('font-size', 12, 12);
+  @include mixins.size('font-size', 10, 12);
   font-weight: 400;
+  color: $ebony;
+  opacity: 0.5;
 }
 .model {
-  color: mixins.$dark-blue;
+  color: mixins.$light-blue;
 }
-.topLine {
+.row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   @include mixins.size('margin-bottom', 4, 4);
+  p {
+    @include mixins.size('margin-right', 6, 12);
+    position: relative;
+    &:after {
+      content: '';
+      @include mixins.size('right', 2, -6);
+      display: block;
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      background-color: $ebony;
+      opacity: 0.2;
+    }
+    &:last-child {
+      margin-right: 0;
+      &:after {
+        display: none;
+      }
+    }
+  }
 }
-.bottomLine {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
 .button {
-  @include mixins.size('width', 150, 274);
-  @include mixins.size('height', 44, 44);
-  @include mixins.size('margin-top', 10, 28);
+  @include mixins.size('width', 170, 274);
+  @include mixins.size('height', 34, 44);
+  @include mixins.size('margin-top', 10, 24);
   @include mixins.size('border-radius', 12, 12);
-  background-color: $dark-blue;
+  @include mixins.size('font-size', 10, 14);
+  font-weight: 500;
+  line-height: 0.7;
+  background-color: $light-blue;
   color: white;
   cursor: pointer;
 }
 .favBtn {
   position: absolute;
   background-color: transparent;
-  @include mixins.size('width', 30, 30);
-  @include mixins.size('height', 30, 30);
-  @include mixins.size('top', 14, 14);
-  @include mixins.size('right', 14, 14);
+  @include mixins.size('width', 24, 30);
+  @include mixins.size('height', 24, 30);
+  @include mixins.size('top', 8, 14);
+  @include mixins.size('right', 8, 14);
   cursor: pointer;
   border: none;
 }

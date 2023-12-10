@@ -4,7 +4,7 @@
 .hero {
   @include mixins.size('padding-left', 0, 128);
   @include mixins.size('padding-right', 0, 128);
-  height: 100vh;
+  @include mixins.size('height', null, 750);
   width: 100vw;
   position: relative;
   @include mixins.for-mobile {
