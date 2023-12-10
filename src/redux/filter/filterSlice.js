@@ -1,15 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {initialFilter} from "../../data/initialFilter";
 
 const initialState = {
-    filter: {
-        brand: "",
-        price: "",
-        mileage: {
-            from: "",
-            to: ""
-        },
-        isActive: false
-    }
+    filter: initialFilter
 };
 
 const filterSlice = createSlice({

@@ -1,8 +1,20 @@
 import styles from './NavBar.scss';
-import {NavLink} from "react-router-dom";
+import {NavLink, useLocation} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {setCurrentPage} from "../../redux/currentPage/CurrentPageSlice";
+import {setFilter} from "../../redux/filter/filterSlice";
+import {initialFilter} from "../../data/initialFilter";
 
 
 export const NavBar = () => {
+    const dispatch = useDispatch();
+    const path = useLocation().pathname;
+
+    if (path !== '/catalogue') {
+        dispatch((setCurrentPage(1)));
+        dispatch(setFilter(initialFilter));
+    }
+
     return (
         <nav className='navWrapper'>
             <NavLink className="link" to='/'>Home</NavLink>
