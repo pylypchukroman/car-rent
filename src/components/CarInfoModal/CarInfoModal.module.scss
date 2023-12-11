@@ -150,7 +150,7 @@
   display: flex;
 }
 .conditions {
-  @include mixins.size('height', 30, 32);
+  @include mixins.size('height', 24, 32);
   @include mixins.size('border-radius', 35, 35);
   @include mixins.size('padding-top', 5, 7);
   @include mixins.size('padding-bottom', 5, 7);

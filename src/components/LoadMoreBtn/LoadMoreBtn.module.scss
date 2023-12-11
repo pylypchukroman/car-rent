@@ -14,6 +14,7 @@
   @include mixins.size('margin-top', 40, 40);
   @include mixins.size('margin-bottom', 30, 40);
   @include mixins.size('border-radius', 12, 12);
+  @include mixins.size('font-size', 12, 16);
   background-color: mixins.$orange;
   color: white;
   cursor: pointer;
