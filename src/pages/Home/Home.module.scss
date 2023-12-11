@@ -123,7 +123,7 @@
 .contentText {
   @include mixins.size('margin-left', null, 30);
   @include mixins.size('width', 250, 450);
-  @include mixins.size('margin-top', 60, 100);
+  @include mixins.size('margin-top', null, 100);
   @include mixins.size('font-size', 10, 25);
   @include mixins.for-mobile {
     @include mixins.size('margin-bottom', 60, 100);

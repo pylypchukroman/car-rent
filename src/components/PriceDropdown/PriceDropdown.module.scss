@@ -35,7 +35,7 @@
   top: 0;
 }
 .currency {
-  @include mixins.size('right', 20, 25);
+  @include mixins.size('right', 20, 20);
   position: absolute;
   top: 0;
 }
