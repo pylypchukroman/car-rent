@@ -21,6 +21,7 @@
 .btn {
   @include mixins.size('font-size', 8, 18);
   @include mixins.size('margin-left', 16, 30);
+  height: 100%;
   font-weight: 500;
   color: $ebony;
   display: flex;
