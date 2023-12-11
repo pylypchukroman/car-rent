@@ -3,6 +3,7 @@
 .wrapper {
   @include mixins.size('padding-right', 10, 128);
   @include mixins.size('padding-left', 10, 128);
+  @include mixins.size('padding-bottom', 20, 20);
   @include mixins.size('min-height', 400, 1000);
 }
 .list {
