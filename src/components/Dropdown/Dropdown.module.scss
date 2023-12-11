@@ -1,7 +1,6 @@
 @use 'src/styles/mixins';
 @import 'src/styles/varibles';
 
-
 .header {
   @include mixins.size('margin-bottom', 8, 8);
   @include mixins.size('font-size', 8, 14);

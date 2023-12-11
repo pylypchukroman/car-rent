@@ -1,7 +1,8 @@
 import styles from './Home.module.scss'
-import hero from '../../images/hero.png'
-import content from '../../images/content.png'
+import hero from '../../images/hero.webp'
+import content from '../../images/content.webp'
 import {Footer} from "../../components/Footer/Footer";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export const Home = () => {
 
@@ -15,14 +16,24 @@ export const Home = () => {
                         <h2 className={styles.secondaryText}>We are ready to serve the best experience in car rental.</h2>
                     </div>
                     <div className={styles.imgWrapper}>
-                        <img className={styles.img} src={hero} alt=""/>
+                        <LazyLoadImage
+                            className={styles.img}
+                            src={hero}
+                            effect="blur"
+                            alt={'hero car'}
+                        />
                     </div>
                 </div>
                 <div className={styles.about}>
                     <h1 className={styles.header}> About Us</h1>
                     <div className={styles.content}>
                         <div className={styles.contentImgWrapper}>
-                            <img className={styles.contentImg} src={content} alt=""/>
+                            <LazyLoadImage
+                                className={styles.contentImg}
+                                src={content}
+                                effect="blur"
+                                alt={'hero car'}
+                            />
                         </div>
                         <p className={styles.contentText}>We are a specialized team committed to providing reliable car rental services. One of the advantages of renting a car from us is offering competitive and transparent prices. </p>
                     </div>

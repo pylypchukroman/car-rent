@@ -5,6 +5,7 @@
   @include mixins.size('padding-left', 20, 128);
   @include mixins.size('padding-top', 30, 50);
   @include mixins.size('padding-bottom', 30, 50);
+  @include mixins.size('min-height', 400,750);
 }
 .list {
   display: grid;
@@ -15,4 +16,11 @@
   @include mixins.for-mobile{
     grid-template-columns: repeat(2, 1fr);
   }
+}
+.msg {
+  @include mixins.size('font-size', 16, 20);
+  @include mixins.size('margin-top', 40, 100);
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.4;
 }

@@ -36,9 +36,8 @@ export const Filter = () => {
             },
             isActive: true
         };
-        console.log(filter)
         dispatch(setFilter(filter));
-    }
+    };
 
     return (
         <div className={styles.formWrapper}>

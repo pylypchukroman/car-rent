@@ -9,7 +9,8 @@ export const LoadMoreBtn = () => {
 
     const onBtnClick = () => {
         dispatch(setCurrentPage(currentPage + 1));
-    }
+    };
+
     return (
         <div className={styles.btnWrapper}>
             <button

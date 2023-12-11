@@ -1,6 +1,7 @@
 import styles from './CarInfoModal.module.scss';
 import {useEffect} from "react";
 import {CloseIcon} from "../CloseIcon/CloseIcon";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export const CarInfoModal = ({ car, onModalClose }) => {
 
@@ -31,9 +32,13 @@ export const CarInfoModal = ({ car, onModalClose }) => {
                 >
                     < CloseIcon />
                 </button>
-                <div className={styles.imgWrapper}>
-                    <img className={styles.img} src={car.img} alt=""/>
-                </div>
+                <LazyLoadImage
+                    className={styles.img}
+                    wrapperClassName={styles.imgWrapper}
+                    src={car.img}
+                    effect="blur"
+                    alt={'car'}
+                />
                 <div className={styles.nameWrapper}>
                     <p className={styles.mainFontStyle}>
                         {car.make}{' '}
@@ -57,10 +62,13 @@ export const CarInfoModal = ({ car, onModalClose }) => {
                 <p className={styles.descr}>{car.description}</p>
                 <p className={styles.accessoriesDesk}>Accessories and functionalities:</p>
                 <ul className={styles.accessoryWrapper}>
-                    {car.accessories.map(acc => <li className={styles.secondaryFontStyle}>{acc}</li>)}
+                    {car.accessories.map((acc, i) =>
+                        <li className={styles.secondaryFontStyle} key={i}>{acc}</li>
+                    )}
                 </ul>
                 <ul className={styles.accessoryWrapper}>
-                    {car.functionalities.map(fun => <li className={styles.secondaryFontStyle}>{fun}</li>)}
+                    {car.functionalities.map((fun, i) =>
+                        <li className={styles.secondaryFontStyle} key={i}>{fun}</li>)}
                 </ul>
                 <p className={styles.rentalHeader}>Rental Conditions: </p>
                 <div className={styles.flex}>

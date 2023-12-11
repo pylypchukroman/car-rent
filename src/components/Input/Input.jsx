@@ -28,5 +28,5 @@ export const Input = ({inputChange, value}) => {
                 />
             </div>
         </div>
-    )
-}
+    );
+};

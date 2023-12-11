@@ -5,6 +5,7 @@ import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {setFavorites} from "../../redux/favorites/favoritesSlice";
 import {getCorrectMileage} from "../../helpers/getCorrectMileage";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export const CarCard = ({ car }) => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -18,16 +19,20 @@ export const CarCard = ({ car }) => {
     const onModalClose = () => {
         setModalOpen(false);
         document.body.style.overflow = 'auto';
-    }
+    };
 
     const [_, country, city] = car.address.split(',');
 
     return (
         <>
         <li className={styles.cardWrapper}>
-            <div className={styles.imgWrapper}>
-                <img className={styles.img} src={car.img} alt="car"/>
-            </div>
+              <LazyLoadImage
+                  className={styles.img}
+                  wrapperClassName={styles.imgWrapper}
+                  src={car.img}
+                  effect="blur"
+                  alt={'hero car'}
+              />
             <div className={styles.mainInfo}>
                 <div className={styles.nameWrapper}>
                     <h3 className={styles.mainFontStyle}>

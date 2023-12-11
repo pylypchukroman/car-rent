@@ -8,7 +8,8 @@ export const Dropdown = ({header, inputChange, value, options }) => {
     const onOptionClick = (option) => {
         inputChange(option);
         setIsActive(false);
-    }
+    };
+
     return (
         <div>
             <p className={styles.header}>{header}</p>
@@ -30,5 +31,5 @@ export const Dropdown = ({header, inputChange, value, options }) => {
                 )}
             </div>
         </div>
-    )
-}
+    );
+};

@@ -1,8 +1,5 @@
 @use 'src/styles/mixins';
 
-.iconWrapper {
-
-}
 .svg {
   @include mixins.size('width', 18, 18);
   @include mixins.size('height', 18, 18);

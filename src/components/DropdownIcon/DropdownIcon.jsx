@@ -1,4 +1,4 @@
-import styles from './DropdownIcon.module.scss'
+import styles from './DropdownIcon.module.scss';
 
 export const DropdownIcon = () => {
     return (
@@ -14,4 +14,4 @@ export const ReversedDropdownIcon = () => {
             <path d="M1 1.5L6 6.5L11 1.5" stroke="#121417" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
     );
-}
+};
