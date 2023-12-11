@@ -19,11 +19,14 @@ export const CarsList = () => {
         <div className={styles.wrapper}>
             {isLoading ? (
                 <Loader />
-            ) : (
+            ) : carsToShow.length ? (
                 <ul className={styles.list}>
                     {carsToShow.map(car => <CarCard key={car.id} car={car} />)}
                 </ul>
+            ) : (
+                <p className={styles.msg}>Sorry, no cars match your search. Try changing filters. Thanks!</p>
             )}
         </div>
     );
 };
+
