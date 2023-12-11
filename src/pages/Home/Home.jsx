@@ -3,8 +3,19 @@ import hero from '../../images/hero.webp'
 import content from '../../images/content.webp'
 import {Footer} from "../../components/Footer/Footer";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import {useEffect} from "react";
+import {setCurrentPage} from "../../redux/currentPage/CurrentPageSlice";
+import {setFilter} from "../../redux/filter/filterSlice";
+import {initialFilter} from "../../data/initialFilter";
+import {useDispatch} from "react-redux";
 
 export const Home = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch((setCurrentPage(1)));
+        dispatch(setFilter(initialFilter));
+    }, [dispatch]);
 
     return (
         <>

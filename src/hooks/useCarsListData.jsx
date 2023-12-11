@@ -18,7 +18,6 @@ export const useCarsListData = () => {
 
     const carsByPageListWithFav = addFavoritePropToCar(carsByPageList, favoritesList);
     const AllCarsWithFav = addFavoritePropToCar(allCarsList, favoritesList);
-    console.log('al', allCarsList)
     const filteredCars = carFilter(AllCarsWithFav, filter);
     const carsToShow = filter.isActive ? filteredCars : carsByPageListWithFav;
 

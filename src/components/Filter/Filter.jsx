@@ -1,17 +1,17 @@
 import styles from './Filter.module.scss';
 import {useState} from "react";
-import {brands} from "../../data/brands";
-import {prices} from "../../data/prices";
 import {useDispatch} from "react-redux";
 import {setFilter} from "../../redux/filter/filterSlice";
 import {Dropdown} from "../Dropdown/Dropdown";
 import {Input} from "../Input/Input";
 import {PriceDropdown} from "../PriceDropdown/PriceDropdown";
+import {useOptionData} from "../../hooks/useOptionData";
 
 export const Filter = () => {
     const dispatch = useDispatch();
     const [brand, setBrand] = useState('Enter the text');
     const [price, setPrice] = useState('');
+    const { brandOptions, priceOptions } = useOptionData();
     const [inputData, setInputData] = useState({
         from: "",
         to: ""
@@ -47,13 +47,13 @@ export const Filter = () => {
                         header={'Car brand'}
                         inputChange={setBrand}
                         value={brand}
-                        options={brands}
+                        options={brandOptions}
                     />
                     <PriceDropdown
                         header={'Price/ 1 hour'}
                         inputChange={setPrice}
                         value={price}
-                        options={prices}/>
+                        options={priceOptions}/>
                     <Input
                         inputChange={handleInputChange}
                         value={inputData}

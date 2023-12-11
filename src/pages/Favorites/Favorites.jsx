@@ -8,6 +8,9 @@ import {useDispatch, useSelector} from "react-redux";
 import {selectError, selectLoading} from "../../redux/cars/selectors";
 import Notiflix from "notiflix";
 import {Loader} from "../../components/Loader/Loader";
+import {setCurrentPage} from "../../redux/currentPage/CurrentPageSlice";
+import {setFilter} from "../../redux/filter/filterSlice";
+import {initialFilter} from "../../data/initialFilter";
 
 export const Favorites = () => {
     const { favoritesCars }= useFavoritesCarsData();
@@ -21,6 +24,8 @@ export const Favorites = () => {
 
     useEffect(() => {
         dispatch(fetchDataThunk());
+        dispatch((setCurrentPage(1)));
+        dispatch(setFilter(initialFilter));
     }, [dispatch]);
 
   return (

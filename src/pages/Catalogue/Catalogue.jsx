@@ -11,6 +11,7 @@ export const Catalogue = () => {
     const dispatch = useDispatch();
     const currentPage = useSelector(selectCurrentPage);
 
+
     useEffect(() => {
         dispatch(fetchCarsByPage(currentPage));
     }, [dispatch, currentPage]);

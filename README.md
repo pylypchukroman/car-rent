@@ -5,11 +5,11 @@ This is an application designed to facilitate car rentals. Users can browse thro
 ## Installation
 To run this application locally, follow these steps:
 
-## Clone this repository.
-Navigate to the project directory.
-Run npm install to install dependencies.
-Run npm start to start the development server.
-Open http://localhost:3000 in your browser.
+- Clone this repository.
+- Navigate to the project directory.
+- Run npm install to install dependencies.
+- Run npm start to start the development server.
+- Open http://localhost:3000 in your browser.
 
 # Features
 

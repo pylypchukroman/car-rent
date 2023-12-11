@@ -51,6 +51,8 @@
   @include mixins.size('padding-right', 6, 18);
   @include mixins.size('padding-left', 6, 18);
   @include mixins.size('border-radius', 12, 14);
+  @include mixins.size('height', 140, 188);
+  overflow: scroll;
   position: absolute;
   left: 0;
   width: 100%;
