@@ -17,4 +17,8 @@
   background-color: mixins.$orange;
   color: white;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: mixins.$dark-orange;
+  }
 }

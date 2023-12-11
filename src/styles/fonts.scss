@@ -1,25 +1,25 @@
 @import './varibles';
 
 @font-face {
-  font-family: $manrope;
-  src: url('../fonts/Manrope-Bold.ttf');
+  font-family: 'Manrope';
+  src: url('../fonts/Manrope-Bold.ttf') format('truetype');
   font-weight: 700;
 }
 
 @font-face {
-  font-family: $manrope;
-  src: url('../fonts/Manrope-Medium.ttf');
+  font-family: 'Manrope';
+  src: url('../fonts/Manrope-Medium.ttf') format('truetype');
   font-weight: 500;
 }
 
 @font-face {
-  font-family: $manrope;
-  src: url('../fonts/Manrope-SemiBold.ttf');
+  font-family: 'Manrope';
+  src: url('../fonts/Manrope-SemiBold.ttf') format('truetype');
   font-weight: 600;
 }
 
 @font-face {
-  font-family: $manrope;
-  src: url('../fonts/Manrope-Regular.ttf');
+  font-family: 'Manrope';
+  src: url('../fonts/Manrope-Regular.ttf') format('truetype');
   font-weight: 400;
 }

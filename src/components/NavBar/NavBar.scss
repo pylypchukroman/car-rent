@@ -16,7 +16,7 @@
   @include mixins.size('margin-left', 30, 150);
   text-decoration: none;
   color: mixins.$black;
-  font-weight: 600;
+  font-weight: 500;
   transition: all 0.5s;
   &:first-child{
     @include mixins.size('margin-left', 0, 0);
