@@ -1,41 +1,71 @@
-# Car Rental
+# 🚗 Car Rental
 
-This is an application designed to facilitate car rentals. Users can browse through available cars, filter based on brand, price, and mileage, and mark cars as favorites for future reference.
+A React-based **car rental application** that allows users to browse cars, apply filters, and save favorites.  
+Built as a **pet project** to practice modern React ecosystem, API integration, and state management.
 
-## Installation
-To run this application locally, follow these steps:
+🔗 **Live Demo:** [Car Rental App](https://pylypchukroman.github.io/car-rent/)  
+📸 **Screenshots** – see below
 
-- Clone this repository.
-- Navigate to the project directory.
-- Run npm install to install dependencies.
-- Run npm start to start the development server.
-- Open http://localhost:3000 in your browser.
+---
 
-# Features
+## ✨ Features
 
-## Main Page
-The main page provides general information about the car rental service. It acts as an entry point to explore available cars.
+- **Main Page** – entry point with general service info.
+- **Catalog** – browse available cars, view details, and filter by brand, price, or mileage.
+- **Favorites** – save cars you’re interested in for quick access later.
 
-## Catalog
-The catalog displays a list of cars available for rent. Users can:
+---
 
-View details of each car (e.g., model, year, features).
-Apply filters to narrow down the car selection by brand, price, and mileage.
+## 🛠️ Technologies Used
 
-## Favorites
-The favorites section allows users to save cars they are interested in. It provides a quick way to access preferred choices without searching again.
+- **React** – core library
+- **React Router** – routing
+- **Axios** – API requests
+- **Redux Persist** – persisting state
+- **Notiflix** – notifications
+- **React Lazy Load Image** – image optimization
+- **React Loader Spinner** – loading indicators
 
-# Usage
-Main Page: Access the main page to get an overview of the service.
-Catalog: Explore available cars, apply filters to find specific cars, and view their details.
-Favorites: Mark cars as favorites by clicking the respective button on the car details page.
+---
 
-# Technologies Used
-- React
-- React Router for routing
-- axios for API requests
-- notiflix for notification handling
-- react-lazy-load-image-component for lazy loading images
-- react-loader-spinner for displaying loading spinners
-- redux-persist for persisting Redux state
+## 🚀 Installation & Setup
 
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/car-rental.git
+   
+2. Navigate to the project folder:
+   cd car-rental
+
+3. Install dependencies:
+   npm install
+
+4. Run the app:
+   npm start
+
+5. Open http://localhost:3000 in your browser.
+
+## 📂 Project Structure (simplified)
+
+src/
+├── components/     # Reusable UI components
+├── pages/          # Main pages (Home, Catalog, Favorites)
+├── redux/          # Redux store, slices
+├── services/       # API calls
+└── App.js          # Root component
+
+## 📝 Future Improvements
+
+1. Add authentication & user accounts
+2. Booking system with rental dates
+
+## 📸 Screenshots
+
+### Home Page
+![Home Page](./src/images/Home_Page.png)
+
+### Catalog
+![Catalog](./src/images/Catalog_Page.png)
+
+### Favorites
+![Favorites](./src/images/Favorites_Page.png)
