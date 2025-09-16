@@ -48,25 +48,6 @@ Built as a **pet project** to practice modern React ecosystem, API integration, 
 
 5. Open http://localhost:3000 in your browser.
 
-## 📂 Project Structure (simplified)
-
-project/
-├── README.md
-├── package.json
-├── public/
-│ └── index.html
-├── src/
-│ ├── components/ # Reusable UI components
-│ ├── pages/ # Main pages (Home, Catalog, Favorites)
-│ ├── redux/ # Redux store, slices
-│ ├── services/ # API calls
-│ ├── App.js # Root component
-│ └── index.js # Entry point
-└── images/ # Screenshots for README
-├── home.png
-├── catalog.png
-└── favorites.png
-
 ## 📝 Future Improvements
 
 1. Add authentication & user accounts
