@@ -35,24 +35,37 @@ Built as a **pet project** to practice modern React ecosystem, API integration, 
    git clone https://github.com/your-username/car-rental.git
    
 2. Navigate to the project folder:
+   ```bash
    cd car-rental
 
 3. Install dependencies:
+   ```bash
    npm install
 
 4. Run the app:
+   ```bash
    npm start
 
 5. Open http://localhost:3000 in your browser.
 
 ## 📂 Project Structure (simplified)
 
-src/
-├── components/     # Reusable UI components
-├── pages/          # Main pages (Home, Catalog, Favorites)
-├── redux/          # Redux store, slices
-├── services/       # API calls
-└── App.js          # Root component
+project/
+├── README.md
+├── package.json
+├── public/
+│ └── index.html
+├── src/
+│ ├── components/ # Reusable UI components
+│ ├── pages/ # Main pages (Home, Catalog, Favorites)
+│ ├── redux/ # Redux store, slices
+│ ├── services/ # API calls
+│ ├── App.js # Root component
+│ └── index.js # Entry point
+└── images/ # Screenshots for README
+├── home.png
+├── catalog.png
+└── favorites.png
 
 ## 📝 Future Improvements
 
