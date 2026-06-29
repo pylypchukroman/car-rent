@@ -2,30 +2,47 @@
 @import 'src/styles/varibles';
 
 .navWrapper {
-  @include mixins.size('padding-top', 10, 20);
-  @include mixins.size('padding-bottom', 10, 20);
-  @include mixins.size('padding-left', 30, 128);
-  @include mixins.size('padding-right', 30, 128);
+  width: min(100% - 32px, 1184px);
+  margin: 0 auto;
+  padding: clamp(14px, 2vw, 24px) 0;
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: flex-end;
+  gap: clamp(8px, 1.5vw, 18px);
+
+  @media (max-width: 640px) {
+    justify-content: center;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
 .link {
-  @include mixins.size('margin-left', 30, 150);
-  @include mixins.size('font-size', 8, 17);
-  @include mixins.size('margin-left', 30, 150);
+  padding: 10px clamp(12px, 2vw, 18px);
+  border-radius: 999px;
+  font-size: clamp(14px, 1.4vw, 17px);
   text-decoration: none;
-  color: mixins.$black;
-  font-weight: 500;
-  transition: all 0.5s;
-  &:first-child{
-    @include mixins.size('margin-left', 0, 0);
-  }
+  color: rgba(18, 20, 23, 0.72);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 10px 30px rgba(11, 68, 205, 0.06);
+  transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+
   &:hover {
-    transform: scale(1.1);
+    color: mixins.$light-blue;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(11, 68, 205, 0.12);
   }
+
   &.active {
-    color: mixins.$orange;
+    color: $white;
+    background: linear-gradient(135deg, mixins.$light-blue, mixins.$dark-blue);
+    box-shadow: 0 14px 34px rgba(52, 112, 255, 0.24);
   }
 }
 

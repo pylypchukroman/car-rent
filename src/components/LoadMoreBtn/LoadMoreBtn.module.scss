@@ -9,17 +9,21 @@
 }
 
 .button {
-  @include mixins.size('width', 150, 274);
-  @include mixins.size('height', 40, 44);
-  @include mixins.size('margin-top', 40, 40);
-  @include mixins.size('margin-bottom', 30, 40);
-  @include mixins.size('border-radius', 12, 12);
-  @include mixins.size('font-size', 12, 16);
-  background-color: mixins.$orange;
+  min-width: min(274px, calc(100% - 32px));
+  min-height: 48px;
+  margin: clamp(34px, 5vw, 44px) 0 clamp(30px, 5vw, 44px);
+  border-radius: 14px;
+  padding: 0 28px;
+  font-size: 16px;
+  font-weight: 700;
+  background: linear-gradient(135deg, mixins.$orange, mixins.$dark-orange);
   color: white;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  box-shadow: 0 14px 30px rgba(254, 132, 0, 0.22);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
   &:hover {
-    background-color: mixins.$dark-orange;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px rgba(254, 132, 0, 0.3);
   }
 }

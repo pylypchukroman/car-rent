@@ -1,26 +1,53 @@
 @use 'src/styles/mixins';
 
 .wrapper {
-  @include mixins.size('padding-right', 20, 128);
-  @include mixins.size('padding-left', 20, 128);
-  @include mixins.size('padding-top', 30, 50);
-  @include mixins.size('padding-bottom', 30, 50);
-  @include mixins.size('min-height', 400,750);
-}
-.list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  @include mixins.size('grid-column-gap', 10, 20);
-  @include mixins.size('grid-row-gap', 10, 40);
-  justify-items: center;
-  @include mixins.for-mobile{
-    grid-template-columns: repeat(2, 1fr);
+  width: min(100% - 32px, 1184px);
+  min-height: clamp(420px, 66vw, 760px);
+  margin: 0 auto;
+  padding: clamp(32px, 5vw, 58px) 0;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 900px) {
+    width: min(100% - 32px, 720px);
+    min-height: calc(100svh - 210px);
+    padding: 48px 0;
+  }
+
+  @media (max-width: 560px) {
+    width: min(100% - 24px, 420px);
+    min-height: calc(100svh - 190px);
+    padding: 42px 0;
   }
 }
+
+.list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(24px, 3vw, 36px);
+  justify-items: center;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 .msg {
-  @include mixins.size('font-size', 16, 20);
-  @include mixins.size('margin-top', 40, 100);
+  width: min(100%, 420px);
+  margin: auto;
+  padding: clamp(24px, 6vw, 40px);
+  border: 1px solid rgba(52, 112, 255, 0.1);
+  border-radius: 24px;
   text-align: center;
+  font-size: clamp(18px, 2vw, 22px);
   font-weight: 600;
   line-height: 1.4;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 20px 60px rgba(18, 20, 23, 0.08);
 }

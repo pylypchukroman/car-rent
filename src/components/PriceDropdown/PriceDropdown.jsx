@@ -33,8 +33,8 @@ export const PriceDropdown = ({header, inputChange, value, options}) => {
             <p className={styles.header}>{header}</p>
             <div className={styles.dropdown} ref={dropdownRef}>
                 <div className={styles.btn} onClick={() => setIsActive(!isActive)}>
-                    {value}
                     <span className={styles.btnHeader}>To</span>
+                    <span className={styles.value}>{value}</span>
                     <span className={styles.currency}>$</span>
                     <span className={styles.icon}>
                         {isActive ? <ReversedDropdownIcon/> : <DropdownIcon />}

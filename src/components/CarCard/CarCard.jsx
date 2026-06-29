@@ -21,7 +21,7 @@ export const CarCard = ({ car }) => {
         document.body.style.overflow = 'auto';
     };
 
-    const [_, country, city] = car.address.split(',');
+    const [, country, city] = car.address.split(',');
 
     return (
         <>

@@ -2,25 +2,47 @@
 @import 'src/styles/varibles';
 
 .wrapper {
-  @include mixins.size('height', 100, 150);
-  @include mixins.size('padding-right', 20, 128);
-  @include mixins.size('padding-left', 20, 128);
-  @include mixins.size('padding-top', 30, 50);
-  @include mixins.size('padding-bottom', 30, 50);
+  min-height: clamp(110px, 14vw, 150px);
+  padding: clamp(28px, 5vw, 52px) 16px;
   width: 100%;
-  background-color: $lightOrange;
+  background: linear-gradient(135deg, $lightOrange, rgba(52, 112, 255, 0.12));
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  text-align: center;
+
+  @media (max-width: 560px) {
+    min-height: 116px;
+    padding: 28px 24px;
+    flex-direction: column;
+    gap: 8px;
+  }
 }
+
 .text {
-  @include mixins.size('font-size', 12, 20);
+  font-size: clamp(16px, 2vw, 20px);
   font-weight: 600;
+
+  @media (max-width: 560px) {
+    font-size: 15px;
+    line-height: 1.45;
+  }
 }
+
 .phone {
-  @include mixins.size('font-size', 12, 20);
-  @include mixins.size('margin-left', 2, 4);
+  font-size: clamp(16px, 2vw, 20px);
   font-weight: 600;
   color: $orange;
   text-decoration: none;
+  transition: color 0.25s ease;
+
+  &:hover {
+    color: $dark-orange;
+  }
+
+  @media (max-width: 560px) {
+    font-size: 16px;
+  }
 }

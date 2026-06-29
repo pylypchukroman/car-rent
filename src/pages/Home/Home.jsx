@@ -8,12 +8,13 @@ import {setCurrentPage} from "../../redux/currentPage/CurrentPageSlice";
 import {setFilter} from "../../redux/filter/filterSlice";
 import {initialFilter} from "../../data/initialFilter";
 import {useDispatch} from "react-redux";
+import {NavLink} from "react-router-dom";
 
 export const Home = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch((setCurrentPage(1)));
+        dispatch(setCurrentPage(1));
         dispatch(setFilter(initialFilter));
     }, [dispatch]);
 
@@ -25,10 +26,15 @@ export const Home = () => {
                     <div className={styles.textBox}>
                         <h1 className={styles.primaryText}>Enjoy your life with our comfortable cars.</h1>
                         <h2 className={styles.secondaryText}>We are ready to serve the best experience in car rental.</h2>
+                        <div className={styles.actions}>
+                            <NavLink className={styles.primaryLink} to="/catalog">Explore cars</NavLink>
+                            <a className={styles.secondaryLink} href="tel:+380730000000">Call us</a>
+                        </div>
                     </div>
                     <div className={styles.imgWrapper}>
                         <LazyLoadImage
                             className={styles.img}
+                            wrapperClassName={styles.imgLazyWrapper}
                             src={hero}
                             effect="blur"
                             alt={'hero car'}
