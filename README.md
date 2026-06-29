@@ -1,65 +1,81 @@
-# 🚗 Car Rental
+# 🚗 CarRent
 
-A React-based **car rental application** that allows users to browse cars, apply filters, and save favorites.  
-Built as a **pet project** to practice modern React ecosystem, API integration, and state management.
+CarRent is a responsive React car rental app for browsing available vehicles,
+filtering by brand, price, and mileage, viewing detailed car information, and
+saving favorites.
 
-🔗 **Live Demo:** [Car Rental App](https://pylypchukroman.github.io/car-rent/)  
-📸 **Screenshots** – see below
-
----
+🔗 **Live Demo:** [CarRent](https://pylypchukroman.github.io/car-rent/)
 
 ## ✨ Features
 
-- **Main Page** – entry point with general service info.
-- **Catalog** – browse available cars, view details, and filter by brand, price, or mileage.
-- **Favorites** – save cars you’re interested in for quick access later.
+- **Responsive landing page** with modern hero, about, and stats sections.
+- **Car catalog** with filtering by brand, hourly price, and mileage range.
+- **Car details modal** with rental conditions, accessories, and contact action.
+- **Favorites page** with persisted favorite cars.
+- **Mobile and tablet layouts** optimized for filters, cards, empty states, and footer.
+- **Lazy-loaded images** and loading/error states.
 
----
+## 🛠️ Tech Stack
 
-## 🛠️ Technologies Used
+- **React 18**
+- **React Router**
+- **Redux Toolkit**
+- **Redux Persist**
+- **Axios**
+- **SCSS Modules / Sass**
+- **Notiflix**
+- **React Lazy Load Image Component**
+- **React Loader Spinner**
 
-- **React** – core library
-- **React Router** – routing
-- **Axios** – API requests
-- **Redux Persist** – persisting state
-- **Notiflix** – notifications
-- **React Lazy Load Image** – image optimization
-- **React Loader Spinner** – loading indicators
+## 🚀 Getting Started
 
----
+1. Clone the repository:
 
-## 🚀 Installation & Setup
-
-1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/car-rental.git
-   
-2. Navigate to the project folder:
+   git clone https://github.com/pylypchukroman/car-rent.git
+   ```
+
+2. Open the project folder:
+
    ```bash
-   cd car-rental
+   cd car-rent
+   ```
 
 3. Install dependencies:
+
    ```bash
    npm install
+   ```
 
-4. Run the app:
+4. Start the development server:
+
    ```bash
    npm start
+   ```
 
-5. Open http://localhost:3000 in your browser.
+5. Open the app in your browser:
 
-## 📝 Future Improvements
+   ```text
+   http://localhost:3000/car-rent
+   ```
 
-1. Add authentication & user accounts
-2. Booking system with rental dates
+## 📦 Available Scripts
+
+- `npm start` - run the app locally.
+- `npm run build` - create a production build.
+- `npm test` - run tests.
+- `npm run deploy` - deploy the build to GitHub Pages.
 
 ## 📸 Screenshots
 
 ### Home Page
+
 ![Home Page](./src/images/Home_Page.png)
 
 ### Catalog
+
 ![Catalog](./src/images/Catalog_Page.png)
 
 ### Favorites
+
 ![Favorites](./src/images/Favorites_Page.png)
